@@ -1,0 +1,21 @@
+import { ArrowUpRight, HeartHandshake, Lightbulb, School, Target } from "lucide-react";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { PageFrame } from "@/components/page-frame";
+import { SectionHeading } from "@/components/section-heading";
+import { copy, isLocale } from "@/lib/content";
+
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: raw } = await params; if (!isLocale(raw)) notFound(); const locale = raw; const text = copy[locale];
+  const values = [
+    { icon: HeartHandshake, title: text.values.commitment, body: text.values.commitmentText },
+    { icon: Lightbulb, title: text.values.innovation, body: text.values.innovationText },
+    { icon: Target, title: text.values.impact, body: text.values.impactText },
+    { icon: School, title: text.values.excellence, body: text.values.excellenceText },
+  ];
+  return <PageFrame locale={locale}><div className="page-hero container"><span className="eyebrow">{text.about.eyebrow}</span><h1>{text.about.title}</h1><p>{text.about.body}</p><Link className="button button-orange" href={`/${locale}/programmes`}>{text.cta.explore}<ArrowUpRight size={18} /></Link></div>
+    <section className="about-mission container"><div className="mission-card mission-blue"><span className="mission-index">01 / SMED</span><h2>{text.about.mission}</h2><p>{text.about.missionText}</p></div><div className="mission-card mission-cream"><span className="mission-index">02 / SMED</span><h2>{text.about.vision}</h2><p>{text.about.visionText}</p></div></section>
+    <section className="about-context container"><SectionHeading eyebrow={text.approach.eyebrow} title={text.approach.title} body={locale === "fr" ? "Cette ambition se traduit par trois axes complémentaires : accompagner les apprentissages, mobiliser les communautés et améliorer les conditions matérielles de l’école." : "This ambition connects three complementary areas: supporting learning, engaging communities and improving school conditions."} /><div className="about-context-note"><span className="context-mark">SMED</span><p>{locale === "fr" ? "Aucune donnée chiffrée d’impact n’étant publiée sur le site d’origine, cette présentation privilégie les objectifs et les actions documentés." : "As the original website does not publish measured impact figures, this presentation focuses on documented goals and activities."}</p></div></section>
+    <section className="values-page section-pad"><div className="container"><SectionHeading eyebrow={text.values.eyebrow} title={text.values.title} body={text.values.body} /><div className="value-card-grid">{values.map((item,index)=><article className="value-card" key={item.title}><span className="value-card-icon"><item.icon size={25} /></span><span className="value-card-index">0{index+1}</span><h3>{item.title}</h3><p>{item.body}</p></article>)}</div></div></section>
+  </PageFrame>;
+}

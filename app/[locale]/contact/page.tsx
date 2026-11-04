@@ -1,0 +1,12 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+import { notFound } from "next/navigation";
+import { ContactForm } from "@/components/contact-form";
+import { PageFrame } from "@/components/page-frame";
+import { copy, isLocale } from "@/lib/content";
+
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale: raw } = await params; if (!isLocale(raw)) notFound(); const locale = raw; const text = copy[locale];
+  return <PageFrame locale={locale}><div className="page-hero container"><span className="eyebrow">{text.contact.eyebrow}</span><h1>{text.contact.title}</h1><p>{text.contact.body}</p></div>
+    <section className="contact-layout container"><div className="contact-details"><span className="eyebrow">{locale === "fr" ? "Nos coordonnées" : "Our details"}</span><h2>{locale === "fr" ? "Un premier message peut tout commencer." : "A first message can start something."}</h2><a href="mailto:contact@smarteducation.cm" className="contact-detail-card"><span><Mail size={20} /></span><span><small>E-mail</small><strong>contact@smarteducation.cm</strong></span></a><a href="tel:+237691344563" className="contact-detail-card"><span><Phone size={20} /></span><span><small>{locale === "fr" ? "Téléphone" : "Phone"}</small><strong>+237 691 34 45 63</strong></span></a><div className="contact-detail-card"><span><MapPin size={20} /></span><span><small>{locale === "fr" ? "Nous trouver" : "Location"}</small><strong>Yaoundé, Simbock<br />{locale === "fr" ? "Cameroun" : "Cameroon"}</strong></span></div><p className="contact-time-note">{locale === "fr" ? "Écrivez-nous directement ou préparez votre message dans le formulaire. Il s’ouvrira dans votre application e-mail pour vérification avant envoi." : "Email us directly or prepare your message in the form. It will open in your email app for review before sending."}</p><div className="contact-topics"><h3>{locale === "fr" ? "Vous pouvez nous écrire au sujet de" : "You can contact us about"}</h3><span>{locale === "fr" ? "Nos programmes éducatifs" : "Our education programmes"}</span><span>{locale === "fr" ? "Un projet de partenariat" : "A partnership idea"}</span><span>{locale === "fr" ? "L’adhésion ou une contribution" : "Membership or contributing"}</span></div></div><div className="contact-form-wrap"><h2>{locale === "fr" ? "Envoyer un message" : "Send a message"}</h2><ContactForm locale={locale} /></div></section>
+  </PageFrame>;
+}
