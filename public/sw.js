@@ -1,4 +1,4 @@
-const CACHE_NAME = "smed-shell-v1";
+const CACHE_NAME = "smed-shell-v2";
 const CORE_ASSETS = [
   "/fr",
   "/en",
@@ -11,6 +11,11 @@ const CORE_ASSETS = [
   "/images/teacher.jpg",
   "/icons/icon-192.png",
   "/icons/icon-512.png",
+  "/icons/icon-maskable-512.png",
+  "/icons/apple-touch-icon.png",
+  "/icons/icon-16.png",
+  "/icons/favicon-32.png",
+  "/favicon.ico",
 ];
 
 self.addEventListener("install", (event) => {
