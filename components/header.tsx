@@ -28,7 +28,7 @@ export function Header({ locale }: { locale: Locale }) {
     <header className="site-header">
       <div className="header-inner">
         <Link href={`/${locale}`} aria-label="SmartEducation — accueil" className="brand">
-          <Image src="/images/smed-logo.png" alt="SmartEducation — Une éducation de qualité pour tous" width={382} height={148} priority />
+          <Image src="/images/smed-logo.webp" alt="SmartEducation — Une éducation de qualité pour tous" width={382} height={148} priority unoptimized />
         </Link>
         <nav className={`main-nav${isMenuOpen ? " is-open" : ""}`} aria-label={locale === "fr" ? "Navigation principale" : "Main navigation"}>
           {links.map((link) => {

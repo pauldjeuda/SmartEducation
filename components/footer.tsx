@@ -9,7 +9,7 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="site-footer">
       <div className="footer-main container">
         <div className="footer-brand-block">
-          <Link href={`/${locale}`} className="footer-logo" aria-label="SmartEducation — accueil"><Image src="/images/smed-logo.png" alt="SmartEducation — Une éducation de qualité pour tous" width={382} height={148} /></Link>
+          <Link href={`/${locale}`} className="footer-logo" aria-label="SmartEducation — accueil"><Image src="/images/smed-logo.webp" alt="SmartEducation — Une éducation de qualité pour tous" width={382} height={148} unoptimized /></Link>
           <p>{text.footer.line}</p>
           <Link className="footer-contact-link" href={`/${locale}/contact`}>{text.cta.contact}<ArrowUpRight size={16} /></Link>
         </div>

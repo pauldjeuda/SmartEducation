@@ -1,21 +1,8 @@
-const CACHE_NAME = "smed-shell-v2";
+const CACHE_NAME = "smed-shell-v3";
 const CORE_ASSETS = [
-  "/fr",
-  "/en",
   "/hors-ligne",
   "/manifest.webmanifest",
-  "/images/smed-logo.png",
-  "/images/student-cutout.png",
-  "/images/classroom.jpg",
-  "/images/community-learning.jpg",
-  "/images/teacher.jpg",
   "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/icon-maskable-512.png",
-  "/icons/apple-touch-icon.png",
-  "/icons/icon-16.png",
-  "/icons/favicon-32.png",
-  "/favicon.ico",
 ];
 
 self.addEventListener("install", (event) => {

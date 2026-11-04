@@ -31,7 +31,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="hero-photo-back" />
         <div className="hero-doodle-board" aria-hidden="true"><svg viewBox="0 0 360 180" preserveAspectRatio="none"><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3"><path d="M18 145c25-20 38-22 57-5l16 16c12 12 28 9 37-4l31-44c14-21 34-25 52-9l39 34c15 13 32 9 42-7l22-34"/><path d="M39 61c18-14 40-14 55 0 16 15 12 39-5 49-18 11-40 4-43-15-2-17 11-27 25-24"/><path d="M252 34l12 15 17-4-8 16 10 14-18-2-11 14-3-18-17-7 17-7z"/><circle cx="195" cy="47" r="12"/><path d="M191 47h8m-4-4v8"/></g></svg></div>
         <svg className="hero-loop" viewBox="0 0 150 105" aria-hidden="true"><path d="M5 54c26-32 48-38 54-21 7 19-12 36-27 27-12-7-7-24 11-28 23-6 33 16 20 31-13 14-35 14-43 29 22-14 60-12 85-41 12-14 18-31 34-42" /></svg>
-        <Image className="hero-cutout" src="/images/student-cutout.png" alt={locale === "fr" ? "Une jeune apprenante portant des lunettes et tenant plusieurs cahiers" : "A young learner wearing glasses and holding a stack of notebooks"} width={500} height={500} priority sizes="(max-width: 780px) 90vw, 48vw" />
+        <Image className="hero-cutout" src="/images/student-cutout.webp" alt={locale === "fr" ? "Une jeune apprenante portant des lunettes et tenant plusieurs cahiers" : "A young learner wearing glasses and holding a stack of notebooks"} width={500} height={500} priority unoptimized />
         <svg className="hero-bursts" viewBox="0 0 100 100" aria-hidden="true"><path d="M33 5l8 24M10 34l23 9M4 70l23-3M64 4l-2 24M87 25l-18 16" /></svg>
       </div>
     </section>
