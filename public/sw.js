@@ -1,8 +1,8 @@
-const CACHE_NAME = "smed-shell-v3";
+const CACHE_NAME = "smed-shell-v4";
 const CORE_ASSETS = [
   "/hors-ligne",
   "/manifest.webmanifest",
-  "/icons/icon-192.png",
+  "/icons/pwa-icon-192.png",
 ];
 
 self.addEventListener("install", (event) => {

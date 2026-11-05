@@ -67,3 +67,4 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:360px){.hero-copy h1{font-size:clamp(38px,12vw,43px)}.hero-section{padding-top:38px}.hero-mini-card{padding:9px 8px}.hero-mini-number{font-size:21px}.hero-mini-card small{font-size:8px}.legal-page h1{font-size:clamp(36px,11vw,42px)}.offline-page{padding:24px 20px}.offline-page h1{font-size:clamp(34px,10vw,44px)}}
 @media(max-width:700px){.hero-copy h1{max-width:100%;font-size:clamp(40px,8.25vw,52px)}.hero-copy .underline-word{max-width:100%;white-space:normal}}
 @media(max-width:360px){.hero-copy h1{font-size:clamp(38px,12vw,43px)}}
+.program-activity-block{margin-top:23px;padding-top:18px;border-top:1px solid var(--line)}.program-activity-block h3{margin:0 0 10px;color:var(--blue);font-size:12px;font-weight:900;letter-spacing:.02em}.program-activities{display:grid;gap:8px;margin:0;padding-left:18px;color:#626d69;font-size:12px;line-height:1.65}.program-activities li::marker{color:var(--orange-deep)}
