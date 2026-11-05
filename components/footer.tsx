@@ -39,11 +39,11 @@ function Gear({ className }: { className: string }) {
   );
 }
 
-function SchoolDecor({ side }: { side: "left" | "right" }) {
+function SchoolDecor({ corner }: { corner: "top-left" | "top-right" | "bottom-left" | "bottom-right" }) {
   return (
-    <div className={`footer-school-decor footer-school-decor-${side}`} aria-hidden="true">
+    <div className={`footer-school-decor footer-school-decor-${corner}`} aria-hidden="true">
       {schoolIcons.map((Icon, index) => (
-        <Icon key={`${side}-${index}`} className={`footer-school-icon footer-school-icon-${index + 1}`} />
+        <Icon key={`${corner}-${index}`} className={`footer-school-icon footer-school-icon-${index + 1}`} />
       ))}
     </div>
   );
@@ -63,8 +63,10 @@ export function Footer({ locale }: { locale: Locale }) {
         <Gear className="footer-gear footer-gear-six" />
       </div>
 
-      <SchoolDecor side="left" />
-      <SchoolDecor side="right" />
+      <SchoolDecor corner="top-left" />
+      <SchoolDecor corner="top-right" />
+      <SchoolDecor corner="bottom-left" />
+      <SchoolDecor corner="bottom-right" />
 
       <div className="footer-main container">
         <div className="footer-brand-block">
