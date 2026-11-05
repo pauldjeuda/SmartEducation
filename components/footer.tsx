@@ -19,6 +19,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <Link href={`/${locale}/programmes`}>{text.nav.programs}</Link>
           <Link href={`/${locale}/actualites`}>{text.nav.news}</Link>
           <Link href={`/${locale}/adhesion`}>{text.nav.member}</Link>
+          <Link href={`/${locale}/statuts`}>{locale === "fr" ? "Les statuts" : "Statutes"}</Link>
         </div>
         <div className="footer-column footer-contact">
           <h2>{text.footer.contact}</h2>
